@@ -1,3 +1,18 @@
-runtime: "typescript"
+runtime: "container"
+startCommand:
+  type: "http"
+  configSchema:
+    type: "object"
+    # Добавьте здесь схему конфигурации для вашего MCP сервера, если она есть.
+    # Например, если ваш сервер требует API ключ:
+    # properties:
+    #   apiKey:
+    #     type: "string"
+    #     description: "Ваш API ключ"
+    # required: ["apiKey"]
+build:
+  dockerfile: "Dockerfile"
+  dockerBuildPath: "."
 env:
   NODE_ENV: "production"
+  # Добавьте любые другие необходимые переменные окружения
